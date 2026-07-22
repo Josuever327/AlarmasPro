@@ -5,21 +5,63 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.josu.alarmaspro",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     },
     "android": {
+      "package": "com.josu.alarmaspro",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.USE_EXACT_ALARM",
+        "android.permission.USE_FULL_SCREEN_INTENT",
+        "android.permission.VIBRATE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.ACCESS_NOTIFICATION_POLICY"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-dev-client",
+      [
+        "expo-notifications",
+        {
+          "color": "#4F7CFF",
+          "sounds": [
+            "./assets/sounds/clasica.wav",
+            "./assets/sounds/suave.wav",
+            "./assets/sounds/intensa.wav"
+          ]
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-build-properties",
+      "expo-audio",
+      "./plugins/withAlarmActivity",
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c8a62750-8765-43e9-b94c-68ec7a99d29d"
+      }
     }
   }
 }
