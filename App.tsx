@@ -8,6 +8,7 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
+  StatusBar as RNStatusBar,
   StyleSheet,
   Switch,
   Text,
@@ -1027,7 +1028,12 @@ function pad(n: number): string {
 
 function makeStyles(c: Colors) {
   return StyleSheet.create({
-    container: { flex: 1, backgroundColor: c.bg },
+    container: {
+      flex: 1,
+      backgroundColor: c.bg,
+      // Deja espacio para la barra de estado en Android.
+      paddingTop: Platform.OS === 'android' ? RNStatusBar.currentHeight ?? 0 : 0,
+    },
     header: {
       flexDirection: 'row',
       justifyContent: 'space-between',
