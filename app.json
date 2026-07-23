@@ -18,10 +18,8 @@
     "android": {
       "package": "com.josu.alarmaspro",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0d1c30"
       },
       "predictiveBackGestureEnabled": false,
       "permissions": [
